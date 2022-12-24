@@ -1,23 +1,11 @@
-﻿export class CheckingAccount {
-  private _balance = 0;//field
+﻿import { BankAccount } from "./bank-account";
+import { AccountType } from "./enums";
 
-  constructor(public title: string) { }
+export class CheckingAccount extends BankAccount {
+  accountType = AccountType.Checking;
 
-  get balance(): number {
-    return this._balance;
+  getAccountInfo() {
+    throw new Error("Method not implemented.");
   }
-
-  set balance(v: number) {
-    if (v > 0) {
-      this._balance = v;
-    }
-  }
-
-  deposit(amount: number) {
-    this.balance += amount;
-  }
-
-  withdrawal(amount: number) {
-    this.balance -= amount;
-  }
+  
 }
